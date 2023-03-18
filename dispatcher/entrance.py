@@ -44,6 +44,7 @@ def getRegValue(handle, key):
 
 def findRegeInfo(name):
     key = name
+    # 注册表这里win10和win11的SOFTWARE的大小写拼写不同
     handle = win32api.RegOpenKey(win32con.HKEY_CURRENT_USER, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
                                  0, win32con.KEY_ALL_ACCESS)
     # 获取注册表的值
@@ -63,6 +64,7 @@ def entrance():
     exe_scrcpy:用于执行scrcpy
     '''
     regeditName = 'MyScript'
+    # TODO：写入注册表的可执行文件不知道更智能化的写法，目前只能固定
     filePath = 'E:\workspace\Launch_Winscrcpy\dispatcher\dist\entrance\entrance.exe'
     regExistsInfo = findRegeInfo(regeditName)
     if regExistsInfo:
