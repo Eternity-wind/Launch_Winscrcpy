@@ -9,7 +9,7 @@ import win32con
 
 # 执行scrcpy.exe
 def exe_scrcpy():
-    adb_path = 'C:/Users/11561/Desktop/scrcpy-win64-v2.0'
+    adb_path = './scrcpy-win64-v2.0'
     os.chdir(adb_path)
     # print(os.getcwd())
     cmd_check_devices = 'adb.exe devices'
