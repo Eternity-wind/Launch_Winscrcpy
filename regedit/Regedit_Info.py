@@ -8,8 +8,9 @@ def add_to_startup(file_path):
         winreg.SetValueEx(key_handle, "MyScript", 0, winreg.REG_SZ, file_path)
 
 
+
 def main():
-    path = 'C:\Program Files\Docker\Docker\Docker Desktop.exe -Autostart'
+    path = 'C:\scrcpy.exe'
     add_to_startup(path)
 
 

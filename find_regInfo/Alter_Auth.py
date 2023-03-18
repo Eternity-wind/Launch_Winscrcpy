@@ -9,10 +9,13 @@ def getRegValue(handle, key):
     except Exception as e:
         return False
 
-
-key = 'Nextcloud'
-handle = win32api.RegOpenKey(win32con.HKEY_CURRENT_USER, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+def getRegPath(name):
+    key = name
+    handle = win32api.RegOpenKey(win32con.HKEY_CURRENT_USER, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
                                0, win32con.KEY_ALL_ACCESS)
-# 获取注册表的值
-values = getRegValue(handle, key)
-print(values)
+    # 获取注册表的值
+    values = getRegValue(handle, key)
+    if isinstance(values, str):
+        return True
+    else:
+        return False

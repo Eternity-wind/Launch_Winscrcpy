@@ -21,4 +21,8 @@ def exe_scrcpy():
         time.sleep(5)
     return "Running"
 
+def main():
+        exe_scrcpy()
 
+if __name__ == '__main__':
+    main()
